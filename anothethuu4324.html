@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Another Click</title>
+  <style>
+    :root {
+      --bg: #1E1E1E;
+      --text: #EAEAEA;
+      --muted: #B5B5B5;
+      --card: #252525;
+      --accent: #ffffff;
+      --accent-dark: #ffffff;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    /* Fixed Header */
+    .site-header {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%;
+      background: #191919;
+      border-bottom: 1px solid #2A2A2A;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      z-index: 1000;
+    }
+    .site-header h1 {
+      font-size: 1.5rem;
+      color: var(--accent);
+    }
+    .site-header nav {
+      display: flex;
+      gap: 1.5rem;
+    }
+    .site-header nav a {
+      color: var(--text);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    .site-header nav a:hover { color: var(--accent); }
+
+    /* Hero */
+    header.hero {
+      padding: 8rem 2rem 4rem;
+      text-align: center;
+      background: linear-gradient(135deg, #1E1E1E 0%, #232323 100%);
+    }
+    header.hero h2 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+    header.hero p {
+      font-size: 1.2rem;
+      color: var(--muted);
+      margin-bottom: 2rem;
+    }
+    .cta-btn {
+      padding: 0.9rem 2rem;
+      background: var(--accent);
+      color: #0A0A0A;
+      font-weight: bold;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: transform 0.2s, background 0.2s;
+    }
+    .cta-btn:hover {
+      background: var(--accent-dark);
+      transform: translateY(-2px);
+    }
+
+    /* Sections */
+    section {
+      padding: 4rem 2rem;
+      max-width: 1100px;
+      margin: auto;
+    }
+    section h2 {
+      text-align: center;
+      margin-bottom: 2rem;
+      font-size: 2rem;
+    }
+    #about p {
+      text-align: center;
+      max-width: 800px;
+      margin: auto;
+      color: var(--muted);
+    }
+
+    /* Services */
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+    .service {
+      background: var(--card);
+      padding: 2rem;
+      border-radius: 12px;
+      border: 1px solid #2A2A2A;
+      transition: transform 0.25s, border-color 0.25s;
+    }
+    .service:hover {
+      transform: translateY(-4px);
+      border-color: var(--accent);
+    }
+
+    /* Contact */
+    .contact {
+      max-width: 800px;
+      margin: auto;
+      background: var(--card);
+      padding: 2rem;
+      border-radius: 12px;
+      border: 1px solid #2A2A2A;
+      box-shadow: 0 8px 18px rgba(0,0,0,0.35);
+    }
+    .contact p {
+      text-align: center;
+      color: var(--muted);
+      margin-bottom: 2rem;
+    }
+    form {
+      display: grid;
+      gap: 1rem;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 0.9rem;
+      border: 1px solid #2A2A2A;
+      border-radius: 8px;
+      background: #1E1E1E;
+      color: var(--text);
+      font-size: 1rem;
+    }
+    input:focus, textarea:focus {
+      outline: none;
+      border-color: var(--accent);
+    }
+    button {
+      padding: 0.9rem;
+      background: var(--accent);
+      color: #0A0A0A;
+      font-weight: bold;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.2s;
+    }
+    button:hover {
+      background: var(--accent-dark);
+      transform: translateY(-2px);
+    }
+
+    /* Footer */
+    footer {
+      background: #191919;
+      color: var(--muted);
+      text-align: center;
+      padding: 2rem;
+      margin-top: 3rem;
+      border-top: 1px solid #2A2A2A;
+    }
+    .socials a {
+      margin: 0 0.5rem;
+      color: var(--muted);
+      text-decoration: none;
+    }
+    .socials a:hover { color: var(--accent); }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      header.hero h2 { font-size: 2rem; }
+      .site-header { flex-direction: column; gap: 0.5rem; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Fixed Header -->
+  <div class="site-header">
+    <h1>Another Click</h1>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+
+  <!-- Hero -->
+  <header class="hero">
+    <h2>we make dreams come true</h2>
+    <p>We empower creators with tools that are elegant, intuitive, and instantly usable.</p>
+    <a href="#contact" class="cta-btn">Work With Us</a>
+  </header>
+
+  <!-- About -->
+  <section id="about">
+    <h2>About Us</h2>
+    <p>
+      At Another Click, we create polished, user-friendly applications—from custom launchers to creative coding environments—
+      bringing ideas to life with simplicity and elegance.
+    </p>
+  </section>
+
+  <!-- Services -->
+  <section id="services">
+    <h2>Our Services</h2>
+    <div class="services">
+      <div class="service">
+        <h3>Custom App Development</h3>
+        <p>Branded desktop and web apps with seamless onboarding and reliable distribution.</p>
+      </div>
+      <div class="service">
+        <h3>Creative Tools</h3>
+        <p>Instantly usable scripting environments and interpreters tailored to creators.</p>
+      </div>
+      <div class="service">
+        <h3>UI/UX Design</h3>
+        <p>Rapid iteration to deliver interfaces that feel intuitive, joyful, and trustworthy.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <h2 style="text-align:center;">Contact Us</h2>
+    <div class="contact">
+      <p>We’d love to hear from you. Fill out the form below or email us directly.</p>
+      <form action="mailto:hello@anotherclick.com" method="post" enctype="text/plain">
+        <input type="text" name="name" placeholder="Your Name" required />
+        <input type="email" name="email" placeholder="Your Email" required />
+        <textarea name="message" rows="6" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Another Click. All rights reserved.</p>
+    <div class="socials">
+      <a href="#">youtube</a> |
+      <a href="#">plixy</a> |
+      <a href="#">GitHub</a>
+    </div>
+  </footer>
+</body>
+</html>
